@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from helpers.waiter import Wait
 from pages.base_page import BasePage
 from pages.common import Emails, Passwords
+# Extra import, you need to remove
 
 
 class LoginPageLocators:
@@ -19,17 +20,15 @@ class LoginPage(BasePage):
         Wait.for_visibility(self.driver, *LoginPageLocators.reg_link)
 
     def set_email(self, username):
-        username_input = self.driver.find_element(*LoginPageLocators.email_input)
-        username_input.send_keys(username)
+        self.driver.find_element(*LoginPageLocators.email_input).send_keys(username)
 
     def set_password(self, password):
-        password_input = self.driver.find_element(*LoginPageLocators.password_input)
-        password_input.send_keys(password)
+        self.driver.find_element(*LoginPageLocators.password_input).send_keys(password)
 
+    # click_on_login_button
     def login_button_press(self):
-        login_button = self.driver.find_element(*LoginPageLocators.login_button)
-        login_button.click()
+        self.driver.find_element(*LoginPageLocators.login_button).click()
 
+    # click_on_registration_link
     def registration_button_press(self):
-        regiter_button = self.driver.find_element(*LoginPageLocators.reg_link)
-        regiter_button.click()
+        self.driver.find_element(*LoginPageLocators.reg_link).click()

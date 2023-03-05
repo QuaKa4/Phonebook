@@ -1,8 +1,10 @@
 from dataclasses import dataclass
 from pages.common import Passwords, Exceptions
+# Extra import, you need to remove
 from pages.common import Emails
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
+# Extra import, you need to remove
 
 
 class TestLoginWithWrongData:
@@ -33,4 +35,6 @@ class TestLoginWithWrongData:
     def test_user_cant_login_with_wrong_username_and_password(self, driver):
         test_case_data = self._TestCaseData(emails=Emails.WRONG_EMAIL, password=Passwords.WRONG_PASSWORD)
         self._test_method(driver, test_case_data)
+
+# You can add check with type space (example data:field email:" ", field password " "). Do it please)
 
