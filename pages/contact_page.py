@@ -9,8 +9,11 @@ class ContactPageLocators:
     tab_address_contact = (By.XPATH, '//*[@id="navbar-contact-details"]/li[4]/a')
 
     add_phone_button = (By.XPATH, '//button[text()="Добавить номер телефона"]')
+    # Bad XPATH , if you use this locator with other language your test will fail
     add_email_button = (By.XPATH, '//button[text()="Добавить адрес эл. почты"]')
+    # Bad XPATH , if you use this locator with other language your test will fail
     add_address_button = (By.XPATH, '//button[text()="Добавить адрес"]')
+    # Bad XPATH , if you use this locator with other language your test will fail
 
     input_email_edit = (By.XPATH, '//*[@id="input-email"]')
     input_phone_edit = (By.XPATH, '//*[@id="selected-cc"]')
@@ -20,12 +23,17 @@ class ContactPageLocators:
     input_address_edit_street = (By.XPATH, '//*[@id="input-street"]')
 
     submit_button = (By.XPATH, '//*[text()=" Сохранить "]')
+    # Bad XPATH , if you use this locator with other language your test will fail
 
 
+# Violation of the principle PageObject should be 3 Page (ContactInfoPage, PhonesPage, EmailsPage,AddressesPage)
 class ContactPage(BasePage):
-    id = 2064
-    url = f'http://phonebook.telran-edu.de:8080/contacts/{id}'
+    url = 'http://phonebook.telran-edu.de:8080/contacts/{contact_id}'
 
+    # this huge methods(email_tab_add,phone_tab_add,address_tab_add) will be very hard to maintain!!!!!
+    # example good PageObject, login_page do as there (small isolated methods)
+    # smaller action methods need using in test
+    # you have to break this method into smaller action methods
     def email_tab_add(self):
         email_contact_tab = self.driver.find_element(*ContactPageLocators.tab_email_contact)
         email_contact_tab.click()
@@ -37,6 +45,7 @@ class ContactPage(BasePage):
         submit_email_button = self.driver.find_element(*ContactPageLocators.submit_button)
         submit_email_button.click()
 
+    # you have to break this method into smaller action methods
     def phone_tab_add(self):
         phone_contact_tab = self.driver.find_element(*ContactPageLocators.tab_phone_contact)
         phone_contact_tab.click()
@@ -48,6 +57,7 @@ class ContactPage(BasePage):
         submit_phone_button = self.driver.find_element(*ContactPageLocators.submit_button)
         submit_phone_button.click()
 
+    # you have to break this method into smaller action methods
     def address_tab_add(self):
         address_contact_tab = self.driver.find_element(*ContactPageLocators.tab_address_contact)
         address_contact_tab.click()
@@ -79,4 +89,3 @@ class ContactPage(BasePage):
         input_street_edit.send_keys('Ulitsa')
         submit_address_button = self.driver.find_element(*ContactPageLocators.submit_button)
         submit_address_button.click()
-
