@@ -15,7 +15,7 @@ class RegistrationPageLocators:
     error_message_email = (By.XPATH, '//*[@id="email-error-invalid"]')
     get_login_link = (By.XPATH, '//*[@id="error-message"]/a')
     disabled_registration_button = (By.XPATH, '//*[@id="registration-form"]/div[4]/div[1]/button[@disabled="true"]')
-    error_registration_massege = (By.XPATH, '//*[@id="email-error-invalid"]')
+    error_registration_massege = (By.XPATH, '//*[@id="error-message"]')
 
 
 class RegistrationPage(BasePage):

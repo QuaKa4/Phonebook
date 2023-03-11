@@ -13,4 +13,3 @@ def test_register_new_user(driver):
     registration_page.check_successful_registration()
     driver.quit()
 
-# не доделал
