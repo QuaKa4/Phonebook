@@ -8,7 +8,7 @@ from pages.main_page import MainPage
 def test_contact_email_tab_edit(driver):
     login_test_helper(driver)
     main_page = MainPage(driver)
-    main_page.contact_menu_button_press()
+    main_page.click_on_created_contact_row()
     contact_page = ContactPage(driver)
     contact_page.email_tab_add()
     # not check added email

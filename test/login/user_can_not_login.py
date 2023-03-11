@@ -1,10 +1,7 @@
 from dataclasses import dataclass
-from pages.common import Passwords, Exceptions
-# Extra import, you need to remove
+from pages.common import Passwords
 from pages.common import Emails
 from pages.login_page import LoginPage
-from pages.main_page import MainPage
-# Extra import, you need to remove
 
 
 class TestLoginWithWrongData:
