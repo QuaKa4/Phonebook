@@ -1,8 +1,8 @@
 from enum import Enum
-
 from faker import Faker
 
 fake = Faker()
+
 
 class Emails(str, Enum):
     EMAIL = 'test@gmail.com'
@@ -11,7 +11,7 @@ class Emails(str, Enum):
 
 
 class Passwords(str, Enum):
-    PASSWORD = '88005553535'
+    PASSWORD = 'test@gmail.com'
     WRONG_PASSWORD = 'sdfsfsfsdf'
 
 

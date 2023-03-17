@@ -2,8 +2,6 @@ from selenium.webdriver.common.by import By
 
 from helpers.waiter import Wait
 from pages.base_page import BasePage
-from pages.common import Emails, Passwords
-# Extra import, you need to remove
 
 
 class LoginPageLocators:
@@ -25,10 +23,8 @@ class LoginPage(BasePage):
     def set_password(self, password):
         self.driver.find_element(*LoginPageLocators.password_input).send_keys(password)
 
-    # click_on_login_button
-    def login_button_press(self):
+    def click_on_login_button(self):
         self.driver.find_element(*LoginPageLocators.login_button).click()
 
-    # click_on_registration_link
-    def registration_button_press(self):
+    def click_on_registration_link(self):
         self.driver.find_element(*LoginPageLocators.reg_link).click()

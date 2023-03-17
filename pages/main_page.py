@@ -8,13 +8,16 @@ from pages.common import Exceptions
 class MainPageLocators:
     main_page_hearer = (By.XPATH, '//app-home-page//app-contacts/div[1]')
     contact_add_button = (By.XPATH, '//app-header/nav/div/ul/li[2]/a')
+
     create_contact_name_input = (By.XPATH, '//*[@id="form-name"]')
     create_contact_surname_input = (By.XPATH, '//*[@id="form-lastName"] ')
+
     create_contact_submit_button = (By.XPATH, '//*[@id="add-contact-form"]/div[4]/*[@class="btn btn-primary"]')
     contact_delete_button = (By.XPATH, '//*[@id="contacts-list"]/div[1]/app-contact-item/div/button[2]')
     contact_delete_checkbox = (By.XPATH, '//*[@id="check-box-remove-contact"]')
     contact_remove_submit_button = (By.XPATH, '//*[@id="submit-remove"]')
     contact_deleted_message = (By.XPATH, '//*[@id="pop-up-success-removed-contact"]')
+
     contact_menu_button = (By.XPATH, '//*[@id="contacts-list"]/div[1]//button[1]')
     contact_edit_button = (By.XPATH, '//*[@id="btn-edit-contact"]')
     contact_edit_name_input = (By.XPATH, '//*[@id="edit-contact-form"]//div[@class="row"][1]//input')

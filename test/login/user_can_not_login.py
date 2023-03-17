@@ -17,7 +17,7 @@ class TestLoginWithWrongData:
         login_page.wait_for_load()
         login_page.set_email(test_case_data.emails)
         login_page.set_password(test_case_data.password)
-        login_page.login_button_press()
+        login_page.click_on_login_button()
         login_page.wait_for_load()
         driver.quit()
 

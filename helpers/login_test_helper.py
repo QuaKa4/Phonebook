@@ -8,7 +8,7 @@ def login_test_helper(driver):
     login_page.navigate_to_url()
     login_page.set_email(Emails.EMAIL)
     login_page.set_password(Passwords.PASSWORD)
-    login_page.login_button_press()
+    login_page.click_on_login_button()
     main_page = MainPage(driver)
     main_page.wait_for_load()
 
