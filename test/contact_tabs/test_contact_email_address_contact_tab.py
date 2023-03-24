@@ -32,6 +32,7 @@ class TestContactPageCheck:
         login_test_helper(driver)
         contact_address_page = ContactAddressPage(driver)
         contact_address_page.navigate_to_url()
+        contact_address_page.address_tab_get()
         contact_address_page.address_tab_add_add_button_click()
         contact_address_page.address_tab_add_country_sendkeys()
         contact_address_page.address_tab_add_street_sendkeys()

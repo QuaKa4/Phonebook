@@ -25,7 +25,7 @@ class ContactPhonePage(BasePage):
         add_phone_button.click()
 
     def phone_tab_add_phone_input_sendkeys(self):
-        phone = fake.phone()
+        phone = fake.phone_number()
         input_phone_edit = self.driver.find_element(*ContactPhonePageLocators.input_phone_edit)
         input_phone_edit.clear()
         input_phone_edit.send_keys(phone)

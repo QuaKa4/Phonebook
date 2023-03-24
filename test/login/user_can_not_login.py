@@ -32,6 +32,3 @@ class TestLoginWithWrongData:
     def test_user_cant_login_with_wrong_username_and_password(self, driver):
         test_case_data = self._TestCaseData(emails=Emails.WRONG_EMAIL, password=Passwords.WRONG_PASSWORD)
         self._test_method(driver, test_case_data)
-
-# You can add check with type space (example data:field email:" ", field password " "). Do it please)
-

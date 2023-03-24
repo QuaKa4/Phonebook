@@ -1,3 +1,4 @@
+from random import random
 from urllib.parse import urljoin
 
 import pytest
